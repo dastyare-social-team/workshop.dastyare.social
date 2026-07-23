@@ -1,7 +1,9 @@
 "use client";
 
+import WindowLayout from "@/components/window-layout";
+
 const Page = () => {
-  return <div>Page</div>;
+  return <WindowLayout doc_path="confirmation-page/v2.mdx" />;
 };
 
 export default Page;
