@@ -1,10 +1,18 @@
 "use client";
 
+import SectionWrapper from "@/components/section-wrapper";
+
 const ConfirmationHeaderSectionV1 = () => {
   return (
-    <div className="flex flex-col pb-5">
-      <p className="">Confirmation — Header Section V1</p>
-    </div>
+    <SectionWrapper className="pt-0 border-0">
+      <div className="flex flex-col gap-y-2.5">
+        <h2>You're registered</h2>
+        <p>
+          Check your email for the link and calendar invite — we'll also send a
+          reminder before it starts
+        </p>
+      </div>
+    </SectionWrapper>
   );
 };
 
