@@ -14,7 +14,9 @@ const LandingFAQSectionV1 = () => {
     <SectionWrapper className="justify-center items-center md:pt-10 md:pb-10">
       <div className="max-w-2xl w-full flex flex-col items-center gap-y-2.5">
         <div className="flex flex-col gap-y-1.5 pb-5 max-w-xl">
-          <h2 className="text-center">Frequently Asked Questions</h2>
+          <h2 className="text-center">
+            Frequently <span className="text-primary">Asked Questions</span>
+          </h2>
           <p className="text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
             pariatur facere molestias ad molestiae ducimus eligendi temporibus
@@ -71,7 +73,9 @@ const LandingFAQSectionV1 = () => {
         </Accordion>
 
         <div className="max-w-md text-center pt-5 flex flex-col gap-y-2.5 items-center">
-          <h3>Still have questions? —</h3>
+          <h3>
+            still have <span className="text-primary">questions? —</span>
+          </h3>
           <p className="text-[18px]">
             Can't find what you're looking for? Our team is here to help!
             Whether you need clarification, have a specific question, or want to

@@ -45,7 +45,13 @@ const Page = () => {
       />
 
       <LandingProblemSectionV1
-        header="You Built sth real — But Your Personal Brand is three random Posts and a Stalled LinkedIn"
+        header={
+          <>
+            You Built sth real
+            <span className="text-primary"> — But Your Personal Brand</span> is
+            three random Posts and a Stalled LinkedIn
+          </>
+        }
         body="You know how to build. You don't know what to post, how often, or why any of it should turn into a sale."
         unique_benefit="This workshop gives you that system — what to build, what to post, and how to turn posting into a repeatable campaign that leads somewhere"
         cta="Save My Seat — Now"
@@ -62,7 +68,29 @@ const Page = () => {
 
       <LandingFAQSectionV1 />
 
-      <LandingFinalCTASectionV1 />
+      <LandingFinalCTASectionV1
+        headline={
+          <>
+            Seats Are LIMITED
+            <span className="text-primary">
+              &nbsp;— Your Invisibility Problem
+            </span>
+            &nbsp;isn't going Anywhere on its OWN
+          </>
+        }
+        body={
+          <>
+            You already know how to build. This is the missing half — get it in
+            one session, and start running it the same week
+          </>
+        }
+        value_props={[
+          "no cost to attend, no card required",
+          "a campaign system, not just content tips",
+          "Live Q&A on your actual brand",
+        ]}
+        cta="Save My Seat — Now"
+      />
     </WindowLayout>
   );
 };

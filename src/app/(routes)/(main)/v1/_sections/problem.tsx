@@ -10,7 +10,7 @@ const LandingProblemSectionV1 = ({
   cta,
   image,
 }: {
-  header: string;
+  header: React.ReactNode;
   body: string;
   unique_benefit: string;
   cta: string;
