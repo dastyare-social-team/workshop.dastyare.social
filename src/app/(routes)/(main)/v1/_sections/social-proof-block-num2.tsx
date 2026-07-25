@@ -10,7 +10,11 @@ import {
 } from "@/components/avatar";
 import SectionWrapper from "@/components/section-wrapper";
 
-const LandingSocialProofBlockNum2SectionV1 = ({ text }: { text: ReactNode }) => {
+const LandingSocialProofBlockNum2SectionV1 = ({
+  text,
+}: {
+  text: ReactNode;
+}) => {
   return (
     <SectionWrapper className="justify-center items-center md:pt-10 md:pb-10">
       <div className="max-w-md">

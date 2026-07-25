@@ -83,6 +83,12 @@ body {
   div {
     font-size: 24px;
   }
+  a:focus {
+    outline: none;
+  }
+  a:focus-visible {
+    outline: none;
+  }
 }
 
 ::-moz-selection {

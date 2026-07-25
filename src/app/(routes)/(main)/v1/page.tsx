@@ -23,13 +23,14 @@ const Page = () => {
         headline="A hands-on Workshop for Founders who can build Products but can't get Anyone to notice it. You'll leave with a working Personal Brand and a Campaign structure you can run the same week — Limited Seats"
         subheadline="Build a Personal Brand that actually sells Your Products"
         value_props={[
-          "What to actually post, so strangers become an audience",
-          "How to turn that audience into a campaign, not just content",
-          "How to run it without a marketing team or a media budget",
+          "what to actually post, so strangers become an audience",
+          "how to turn that audience into a campaign, not just content",
+          "how to run it without a marketing team or a media budget",
         ]}
         primary_cta="Save My Seat — Now"
         friction_reducer_line="no credit card required, seats limited, live Q&A included"
       />
+
       <LandingSocialProofBlockNum2SectionV1
         text={
           <>
@@ -42,6 +43,7 @@ const Page = () => {
           </>
         }
       />
+
       <LandingProblemSectionV1
         header="You Built sth real — But Your Personal Brand is three random Posts and a Stalled LinkedIn"
         body="You know how to build. You don't know what to post, how often, or why any of it should turn into a sale."
@@ -49,11 +51,17 @@ const Page = () => {
         cta="Save My Seat — Now"
         image="image"
       />
+
       <LandingSocialProofBlockNum1SectionV1 />
+
       <LandingThreeDreamOutcomeBlocksSectionV1 />
+
       <LandingWhyThisWorkshopIsDifferentSectionV1 />
+
       <LandingHowItWorksSectionV1 />
+
       <LandingFAQSectionV1 />
+
       <LandingFinalCTASectionV1 />
     </WindowLayout>
   );

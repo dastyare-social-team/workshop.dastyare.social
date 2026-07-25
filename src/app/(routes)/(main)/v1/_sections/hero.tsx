@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/button";
 import SectionWrapper from "@/components/section-wrapper";
-import Link from "next/link";
 
 const LandingHeroSectionV1 = ({
   headline,
@@ -21,7 +20,7 @@ const LandingHeroSectionV1 = ({
     <SectionWrapper className="pt-0 border-0">
       <div className="flex flex-col flex-1 gap-y-8">
         <div className="flex flex-col gap-y-1.5">
-          <p>{subheadline}</p>
+          <p className="text-[22px]">{subheadline}</p>
           <h2>{headline}</h2>
           <div className="flex flex-col gap-y-1">
             {value_props.map((value, index) => (

@@ -8,7 +8,7 @@ const Footer = () => {
     <SectionWrapper className="text-center select-none justify-center md:items-center md:pt-10 md:pb-10">
       <div className="flex flex-col gap-y-3.5">
         <div className="flex flex-col md:flex-row gap-x-5 items-center justify-center">
-          <p className="flex flex-wrap justify-center md:flex-row">
+          <p className="flex flex-wrap justify-center items-center md:flex-row">
             copyright&nbsp;<span className="text-[20px]">@</span>&nbsp;
             <Link
               target="_blank"
