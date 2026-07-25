@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <SectionWrapper className="text-center select-none justify-center md:items-center md:pt-10 md:pb-10">
       <div className="flex flex-col gap-y-3.5">
-        <div className="flex gap-x-5 items-center justify-center">
-          <p>
+        <div className="flex flex-col md:flex-row gap-x-5 items-center justify-center">
+          <p className="flex flex-wrap justify-center md:flex-row">
             copyright&nbsp;<span className="text-[20px]">@</span>&nbsp;
             <Link
               target="_blank"
@@ -20,8 +20,8 @@ const Footer = () => {
             </Link>
           </p>
 
-          <div className="flex gap-x-1.5 text-[20px]">
-            /
+          <div className="flex flex-wrap justify-center items-center gap-x-1.5 text-[20px]">
+            <p className="hidden md:block text-[16px]">/</p>
             <Link
               target="_blank"
               rel="noopener noreferrer"

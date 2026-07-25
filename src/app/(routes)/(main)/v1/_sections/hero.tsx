@@ -1,12 +1,47 @@
 "use client";
 
-const LandingHeroSectionV1 = () => {
+import { Button } from "@/components/button";
+import SectionWrapper from "@/components/section-wrapper";
+import Link from "next/link";
+
+const LandingHeroSectionV1 = ({
+  headline,
+  subheadline,
+  value_props = [],
+  primary_cta,
+  friction_reducer_line,
+}: {
+  headline: string;
+  subheadline: string;
+  value_props: Array<string>;
+  primary_cta: string;
+  friction_reducer_line: string;
+}) => {
   return (
-    <>
-      <p className="w-full text-center border-primary/5 py-2.5">
-        Landing — Hero Section V1
-      </p>
-    </>
+    <SectionWrapper className="pt-0 border-0">
+      <div className="flex flex-col flex-1 gap-y-8">
+        <div className="flex flex-col gap-y-1.5">
+          <p>{subheadline}</p>
+          <h2>{headline}</h2>
+          <div className="flex flex-col gap-y-1">
+            {value_props.map((value, index) => (
+              <p key={index}>— {value}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-y-2.5">
+          <div>
+            <Button>{primary_cta}</Button>
+          </div>
+          <div className="text-[18px] opacity-80 leading-6.5">
+            {friction_reducer_line}
+          </div>
+        </div>
+      </div>
+
+      <div className="aspect-square flex-1 bg-primary/[1%] border-2 border-primary/5"></div>
+    </SectionWrapper>
   );
 };
 
