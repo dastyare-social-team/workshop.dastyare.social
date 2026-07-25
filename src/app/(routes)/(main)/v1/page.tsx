@@ -20,8 +20,17 @@ const Page = () => {
   return (
     <WindowLayout>
       <LandingHeroSectionV1
-        headline="A hands-on Workshop for Founders who can build Products but can't get Anyone to notice it. You'll leave with a working Personal Brand and a Campaign structure you can run the same week — Limited Seats"
-        subheadline="Build a Personal Brand that actually sells Your Products"
+        headline={
+          <>
+            A hands-on&nbsp;
+            <span className="text-primary">Workshop for Founders</span> who can
+            build Products but can't get Anyone to notice it. You'll leave with
+            a working{" "}
+            <span className="text-primary">Personal Brand and a Campaign</span>{" "}
+            structure you can run the same week — Limited Seats
+          </>
+        }
+        subheadline="Build a Personal Brand that Actually Sells Your Products"
         value_props={[
           "what to actually post, so strangers become an audience",
           "how to turn that audience into a campaign, not just content",
@@ -34,9 +43,9 @@ const Page = () => {
       <LandingSocialProofBlockNum2SectionV1
         text={
           <>
-            We didn't guess, We studied{" "}
+            We didn't guess, We&nbsp;
             <span className="text-primary bg-primary/5">
-              127 Personal Brand Campaigns —
+              studied 127 Personal Brand Campaigns —
             </span>
             &nbsp;Elon Musk and Gary Vee among them — to prove what actually
             works
@@ -58,7 +67,22 @@ const Page = () => {
         image="image"
       />
 
-      <LandingSocialProofBlockNum1SectionV1 />
+      <LandingSocialProofBlockNum1SectionV1
+        text={
+          <>
+            built from&nbsp;
+            <span className="text-primary bg-primary/5">
+              Studying 127 Personal Brand Campaigns — including
+            </span>
+            &nbsp;Elon Musk, Gary Vee, and others — to find the patterns&nbsp;
+            <span className="text-primary bg-primary/5">
+              that actually drive demand,
+            </span>
+            &nbsp; not just more views
+          </>
+        }
+        cta="Save My Seat — Now"
+      />
 
       <LandingThreeDreamOutcomeBlocksSectionV1 />
 

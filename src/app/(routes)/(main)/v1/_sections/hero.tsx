@@ -10,7 +10,7 @@ const LandingHeroSectionV1 = ({
   primary_cta,
   friction_reducer_line,
 }: {
-  headline: string;
+  headline: React.ReactNode;
   subheadline: string;
   value_props: Array<string>;
   primary_cta: string;
@@ -20,7 +20,7 @@ const LandingHeroSectionV1 = ({
     <SectionWrapper className="pt-0 border-0">
       <div className="flex flex-col flex-1 gap-y-8">
         <div className="flex flex-col gap-y-1.5">
-          <p className="text-[22px]">{subheadline}</p>
+          <p className="text-[20px]">{subheadline}</p>
           <h2>{headline}</h2>
           <div className="flex flex-col gap-y-1">
             {value_props.map((value, index) => (

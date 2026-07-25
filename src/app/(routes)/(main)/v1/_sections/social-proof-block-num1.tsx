@@ -1,12 +1,24 @@
 "use client";
 
-const LandingSocialProofBlockNum1SectionV1 = () => {
+import { Button } from "@/components/button";
+import SectionWrapper from "@/components/section-wrapper";
+
+const LandingSocialProofBlockNum1SectionV1 = ({
+  text,
+  cta,
+}: {
+  text: React.ReactNode;
+  cta: string;
+}) => {
   return (
-    <>
-      <p className="w-full text-center border-t-2 border-primary/5 py-2.5">
-        Landing — Social Proof #1 Section V1
-      </p>
-    </>
+    <SectionWrapper className="justify-center items-center md:pt-10 md:pb-10">
+      <div className="flex flex-col gap-y-8 max-w-md items-center">
+        <div className="text-center">{text}</div>
+        <div>
+          <Button>{cta}</Button>
+        </div>
+      </div>
+    </SectionWrapper>
   );
 };
 
