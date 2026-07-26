@@ -67,24 +67,11 @@ const Page = () => {
         image="image"
       />
 
-      <LandingSocialProofBlockNum1SectionV1
-        text={
-          <>
-            built from&nbsp;
-            <span className="text-primary bg-primary/5">
-              Studying 127 Personal Brand Campaigns — including
-            </span>
-            &nbsp;Elon Musk, Gary Vee, and others — to find the patterns&nbsp;
-            <span className="text-primary bg-primary/5">
-              that actually drive demand,
-            </span>
-            &nbsp; not just more views
-          </>
-        }
-        cta="Save My Seat — Now"
-      />
+      <LandingSocialProofBlockNum1SectionV1 />
 
       <LandingThreeDreamOutcomeBlocksSectionV1 />
+
+      <LandingSocialProofBlockNum1SectionV1 />
 
       <LandingWhyThisWorkshopIsDifferentSectionV1 />
 

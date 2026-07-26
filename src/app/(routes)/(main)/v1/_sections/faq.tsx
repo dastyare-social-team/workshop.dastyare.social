@@ -11,15 +11,16 @@ import { Button } from "@/components/button";
 
 const LandingFAQSectionV1 = () => {
   return (
-    <SectionWrapper className="justify-center items-center md:pt-10 md:pb-10">
+    <SectionWrapper className="justify-center items-center md:pb-10">
       <div className="max-w-2xl w-full flex flex-col items-center gap-y-2.5">
         <div className="flex flex-col gap-y-1.5 pb-5 max-w-xl">
           <h2 className="text-center">
-            Frequently <span className="text-primary">Asked Questions</span>
+            One of These Is{" "}
+            <span className="text-primary">Probably Your Question</span>
           </h2>
           <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-            pariatur facere molestias ad molestiae ducimus eligendi temporibus
+            Answered honestly — because the only thing between you and
+            registering is usually one unanswered question
           </p>
         </div>
 
