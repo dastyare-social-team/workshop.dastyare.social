@@ -6,5 +6,27 @@
     "meta_title": "Not Found",
     "description": "Are You Lost — Seems There's Not What You're Looking For",
     "back_to_home": "Get Back To Home Page"
+  },
+  "why_this_workshop_different": {
+    "table": {
+      "headers": {
+        "empty": "",
+        "workshop": "this Personal Branding Workshop",
+        "generic_courses": "Generic Marketing Courses",
+        "just_post_more": "\"Just Post More\" Advice"
+      },
+      "rows": {
+        "technical_founders": "built for technical founders, not marketers",
+        "campaign_structure": "teaches a campaign structure, not just content ideas",
+        "product_side": "taught by someone who's shipped the product side too",
+        "team_or_budget": "runnable without a team or budget",
+        "live_qa": "Live Q&A on your specific brand"
+      },
+      "values": {
+        "sometimes": "sometimes",
+        "rarely": "rarely",
+        "dash": "—"
+      }
+    }
   }
 }
