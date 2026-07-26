@@ -10,11 +10,7 @@ import {
 } from "@/components/avatar";
 import SectionWrapper from "@/components/section-wrapper";
 
-const LandingSocialProofBlockNum2SectionV1 = ({
-  text,
-}: {
-  text: ReactNode;
-}) => {
+const LandingSocialProofBlockNum2SectionV1 = () => {
   return (
     <SectionWrapper className="justify-center items-center md:pt-10 md:pb-10">
       <div className="max-w-md">
@@ -30,7 +26,13 @@ const LandingSocialProofBlockNum2SectionV1 = ({
           ))}
         </AvatarGroup>
 
-        <div className="text-center text-[22px] leading-8">{text}</div>
+        <div className="text-center text-[22px] leading-8">
+          We didn't guess, We&nbsp;
+          <span className="text-primary bg-primary/5">
+            studied 127 Personal Brand Campaigns —
+          </span>
+          &nbsp;Elon Musk and Gary Vee among them — to prove what actually works
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
+import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 
 const LandingSocialProofBlockNum1SectionV1 = () => {
@@ -18,9 +19,8 @@ const LandingSocialProofBlockNum1SectionV1 = () => {
           </span>
           &nbsp; not just more views
         </div>
-        <div>
-          <Button>Save My Seat — Now</Button>
-        </div>
+
+        <RegistrationForm primary_cta="Save My Seat — Now" />
       </div>
     </SectionWrapper>
   );

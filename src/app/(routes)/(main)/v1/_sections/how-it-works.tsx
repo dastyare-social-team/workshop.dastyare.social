@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
+import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 import { FootprintsIcon } from "lucide-react";
 
@@ -25,9 +26,8 @@ const LandingHowItWorksSectionV1 = () => {
             </span>
           </h2>
         </div>
-        <div>
-          <Button>Save My Seat — Now</Button>
-        </div>
+
+        <RegistrationForm primary_cta="Save My Seat — Now" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 mt-5">
           {/* —— COL #1 —— */}

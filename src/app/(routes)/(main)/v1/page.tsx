@@ -19,53 +19,11 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <WindowLayout>
-      <LandingHeroSectionV1
-        headline={
-          <>
-            A hands-on&nbsp;
-            <span className="text-primary">Workshop for Founders</span> who can
-            build Products but can't get Anyone to notice it. You'll leave with
-            a working{" "}
-            <span className="text-primary">Personal Brand and a Campaign</span>{" "}
-            structure you can run the same week — Limited Seats
-          </>
-        }
-        subheadline="Build a Personal Brand that Actually Sells Your Products"
-        value_props={[
-          "what to actually post, so strangers become an audience",
-          "how to turn that audience into a campaign, not just content",
-          "how to run it without a marketing team or a media budget",
-        ]}
-        primary_cta="Save My Seat — Now"
-        friction_reducer_line="no credit card required, seats limited, live Q&A included"
-      />
+      <LandingHeroSectionV1 />
 
-      <LandingSocialProofBlockNum2SectionV1
-        text={
-          <>
-            We didn't guess, We&nbsp;
-            <span className="text-primary bg-primary/5">
-              studied 127 Personal Brand Campaigns —
-            </span>
-            &nbsp;Elon Musk and Gary Vee among them — to prove what actually
-            works
-          </>
-        }
-      />
+      <LandingSocialProofBlockNum2SectionV1 />
 
-      <LandingProblemSectionV1
-        header={
-          <>
-            You Built sth real
-            <span className="text-primary"> — But Your Personal Brand</span> is
-            three random Posts and a Stalled LinkedIn
-          </>
-        }
-        body="You know how to build. You don't know what to post, how often, or why any of it should turn into a sale."
-        unique_benefit="This workshop gives you that system — what to build, what to post, and how to turn posting into a repeatable campaign that leads somewhere"
-        cta="Save My Seat — Now"
-        image="image"
-      />
+      <LandingProblemSectionV1 />
 
       <LandingSocialProofBlockNum1SectionV1 />
 
@@ -79,29 +37,7 @@ const Page = () => {
 
       <LandingFAQSectionV1 />
 
-      <LandingFinalCTASectionV1
-        headline={
-          <>
-            Seats Are LIMITED
-            <span className="text-primary">
-              &nbsp;— Your Invisibility Problem
-            </span>
-            &nbsp;isn't going Anywhere on its OWN
-          </>
-        }
-        body={
-          <>
-            You already know how to build. This is the missing half — get it in
-            one session, and start running it the same week
-          </>
-        }
-        value_props={[
-          "no cost to attend, no card required",
-          "a campaign system, not just content tips",
-          "Live Q&A on your actual brand",
-        ]}
-        cta="Save My Seat — Now"
-      />
+      <LandingFinalCTASectionV1 />
     </WindowLayout>
   );
 };

@@ -11,6 +11,7 @@ import {
 } from "@/components/table";
 import { getTranslations } from "next-intl/server";
 import { CheckIcon, XIcon } from "lucide-react";
+import RegistrationForm from "@/components/registration-form";
 
 const tableData = [
   {
@@ -113,9 +114,8 @@ const LandingWhyThisWorkshopIsDifferentSectionV1 = async () => {
           </h2>
           <p>Not Another "Personal Branding" Webinar</p>
         </div>
-        <div>
-          <Button>Save My Seat — Now</Button>
-        </div>
+
+        <RegistrationForm primary_cta="Save My Seat — Now" />
 
         {/* —— Comparison Table —— */}
         <ScrollArea className="w-full">

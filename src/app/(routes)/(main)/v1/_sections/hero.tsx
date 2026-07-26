@@ -1,27 +1,30 @@
 "use client";
 
-import { Button } from "@/components/button";
+import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 
-const LandingHeroSectionV1 = ({
-  headline,
-  subheadline,
-  value_props = [],
-  primary_cta,
-  friction_reducer_line,
-}: {
-  headline: React.ReactNode;
-  subheadline: string;
-  value_props: Array<string>;
-  primary_cta: string;
-  friction_reducer_line: string;
-}) => {
+const value_props = [
+  "what to actually post, so strangers become an audience",
+  "how to turn that audience into a campaign, not just content",
+  "how to run it without a marketing team or a media budget",
+];
+
+const LandingHeroSectionV1 = () => {
   return (
     <SectionWrapper className="pt-0 border-0">
       <div className="flex flex-col flex-1 gap-y-8">
         <div className="flex flex-col gap-y-1.5">
-          <p className="text-[20px]">{subheadline}</p>
-          <h2>{headline}</h2>
+          <p className="text-[20px]">
+            Build a Personal Brand that Actually Sells Your Products
+          </p>
+          <h2>
+            A hands-on&nbsp;
+            <span className="text-primary">Workshop for Founders</span> who can
+            build Products but can't get Anyone to notice it. You'll leave with
+            a working{" "}
+            <span className="text-primary">Personal Brand and a Campaign</span>{" "}
+            structure you can run the same week — Limited Seats
+          </h2>
           <div className="flex flex-col gap-y-1">
             {value_props.map((value, index) => (
               <p key={index}>— {value}</p>
@@ -30,11 +33,10 @@ const LandingHeroSectionV1 = ({
         </div>
 
         <div className="flex flex-col gap-y-2.5">
-          <div>
-            <Button>{primary_cta}</Button>
-          </div>
+          <RegistrationForm primary_cta="Save My Seat — Now" />
+
           <div className="text-[18px] opacity-80 leading-6.5">
-            {friction_reducer_line}
+            no credit card required, seats limited, live Q&A included
           </div>
         </div>
       </div>

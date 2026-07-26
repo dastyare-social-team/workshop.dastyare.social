@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
+import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 
 const LandingThreeDreamOutcomeBlocksSectionV1 = () => {
@@ -20,9 +21,7 @@ const LandingThreeDreamOutcomeBlocksSectionV1 = () => {
             </p>
           </div>
 
-          <div>
-            <Button>Save My Seat — Now</Button>
-          </div>
+          <RegistrationForm primary_cta="Save My Seat — Now" />
         </div>
 
         <div className="aspect-square flex-1 bg-primary/[1%] border-2 border-primary/5"></div>
@@ -40,9 +39,7 @@ const LandingThreeDreamOutcomeBlocksSectionV1 = () => {
             </p>
           </div>
 
-          <div>
-            <Button>Save My Seat — Now</Button>
-          </div>
+          <RegistrationForm primary_cta="Save My Seat — Now" />
         </div>
 
         <div className="aspect-square flex-1 bg-primary/[1%] border-2 border-primary/5"></div>
@@ -60,9 +57,7 @@ const LandingThreeDreamOutcomeBlocksSectionV1 = () => {
             </p>
           </div>
 
-          <div>
-            <Button>Save My Seat — Now</Button>
-          </div>
+          <RegistrationForm primary_cta="Save My Seat — Now" />
         </div>
 
         <div className="aspect-square flex-1 bg-primary/[1%] border-2 border-primary/5"></div>
