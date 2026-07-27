@@ -1,5 +1,4 @@
 import { Button } from "@/components/button";
-import { ScrollArea } from "@/components/scroll-area";
 import SectionWrapper from "@/components/section-wrapper";
 import {
   Table,
@@ -118,61 +117,54 @@ const LandingWhyThisWorkshopIsDifferentSectionV1 = async () => {
         <RegistrationForm primary_cta="Save My Seat — Now" />
 
         {/* —— Comparison Table —— */}
-        <ScrollArea className="w-full">
-          <Table className="w-full max-w-5xl overflow-x-scroll select-none">
-            <TableHeader className="border-b-2 border-primary/10 overflow-x-scroll">
-              {tableData
-                .filter((item) => item.type === "header")
-                .map((item, index) => (
-                  <TableRow
-                    key={`header-${index}`}
-                    className="hover:bg-transparent"
-                  >
-                    {item.cells.map((cell, cellIndex) => (
-                      <TableHead
-                        key={`${index}-${cellIndex}`}
-                        className={cell.className}
-                      >
-                        {cell.key ? t(cell.key) : ""}
-                      </TableHead>
-                    ))}
-                  </TableRow>
-                ))}
-            </TableHeader>
+        <Table className="w-full max-w-5xl overflow-x-scroll select-none">
+          <TableHeader className="border-b-2 border-primary/10 overflow-x-scroll">
+            {tableData
+              .filter((item) => item.type === "header")
+              .map((item, index) => (
+                <TableRow
+                  key={`header-${index}`}
+                  className="hover:bg-transparent"
+                >
+                  {item.cells.map((cell, cellIndex) => (
+                    <TableHead
+                      key={`${index}-${cellIndex}`}
+                      className={cell.className}
+                    >
+                      {cell.key ? t(cell.key) : ""}
+                    </TableHead>
+                  ))}
+                </TableRow>
+              ))}
+          </TableHeader>
 
-            <TableBody className="border-l-2 border-primary/10">
-              {tableData
-                .filter((item) => item.type === "row")
-                .map((item, index) => (
-                  <TableRow
-                    key={`${item.labelKey}-${index}`}
-                    className="h-full"
-                  >
-                    <TableCell className="px-4.5 py-2.5 max-w-87.5 whitespace-normal wrap-break-word text-[22px] border-r-2 border-primary/10 bg-primary/3">
-                      {t(item.labelKey)}
+          <TableBody className="border-l-2 border-primary/10">
+            {tableData
+              .filter((item) => item.type === "row")
+              .map((item, index) => (
+                <TableRow key={`${item.labelKey}-${index}`} className="h-full">
+                  <TableCell className="px-4.5 py-2.5 max-w-87.5 whitespace-normal wrap-break-word text-[22px] border-r-2 border-primary/10 bg-primary/3">
+                    {t(item.labelKey)}
+                  </TableCell>
+
+                  {item.cells.map((cell, cellIndex) => (
+                    <TableCell
+                      key={`${item.labelKey}-${cellIndex}`}
+                      className={`px-5 py-2.5 text-center border-r-2 border-primary/10 ${cell.className ?? ""}`}
+                    >
+                      <div className="flex flex-1 justify-center items-center">
+                        {cell.kind === "icon" ? (
+                          <cell.Icon />
+                        ) : (
+                          <span className={cell.className}>{t(cell.key)}</span>
+                        )}
+                      </div>
                     </TableCell>
-
-                    {item.cells.map((cell, cellIndex) => (
-                      <TableCell
-                        key={`${item.labelKey}-${cellIndex}`}
-                        className={`px-5 py-2.5 text-center border-r-2 border-primary/10 ${cell.className ?? ""}`}
-                      >
-                        <div className="flex flex-1 justify-center items-center">
-                          {cell.kind === "icon" ? (
-                            <cell.Icon />
-                          ) : (
-                            <span className={cell.className}>
-                              {t(cell.key)}
-                            </span>
-                          )}
-                        </div>
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
-        </ScrollArea>
+                  ))}
+                </TableRow>
+              ))}
+          </TableBody>
+        </Table>
       </div>
     </SectionWrapper>
   );
