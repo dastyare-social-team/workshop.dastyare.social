@@ -27,7 +27,10 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 
     return () => {
       window.removeEventListener("error", handleError);
-      window.removeEventListener("unhandledrejection", handleUnhandledRejection);
+      window.removeEventListener(
+        "unhandledrejection",
+        handleUnhandledRejection,
+      );
     };
   }, []);
 
