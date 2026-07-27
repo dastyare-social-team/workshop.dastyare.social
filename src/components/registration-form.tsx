@@ -4,6 +4,7 @@ import { Button } from "@/components/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/dialog";
 import { Field, FieldGroup } from "@/components/field";
 import { Input } from "@/components/input";
+import { capture, captureException, identify } from "@/lib/posthog";
 import { cn } from "@/lib/utils";
 import { useState, type KeyboardEvent } from "react";
 
@@ -104,16 +105,32 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
   const handleContinue = () => {
     const nameValidation = validateName(name);
     if (!nameValidation.ok) {
+      capture("registration_form_validation_failed", {
+        reason: "name",
+        stage: "continue",
+      });
       setError(nameValidation.message);
       return;
     }
 
     const emailValidation = validateEmail(email);
     if (!emailValidation.ok) {
+      capture("registration_form_validation_failed", {
+        reason: "email",
+        stage: "continue",
+      });
       setError(emailValidation.message);
       return;
     }
 
+    identify(emailValidation.sanitized, {
+      name: nameValidation.sanitized,
+      stage: "form_started",
+    });
+    capture("registration_form_continue", {
+      variant: "v1",
+      stage: "contact_details",
+    });
     setError(null);
     set_show_phone_input(true);
   };
@@ -125,23 +142,36 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
 
     const nameValidation = validateName(name);
     if (!nameValidation.ok) {
+      capture("registration_form_validation_failed", {
+        reason: "name",
+        stage: "submit",
+      });
       setError(nameValidation.message);
       return;
     }
 
     const emailValidation = validateEmail(email);
     if (!emailValidation.ok) {
+      capture("registration_form_validation_failed", {
+        reason: "email",
+        stage: "submit",
+      });
       setError(emailValidation.message);
       return;
     }
 
     const phoneValidation = validatePhone(phone);
     if (!phoneValidation.ok) {
+      capture("registration_form_validation_failed", {
+        reason: "phone",
+        stage: "submit",
+      });
       setError(phoneValidation.message);
       return;
     }
 
     if (!WEBHOOK_URL) {
+      capture("registration_form_webhook_missing");
       setError("The registration webhook URL is not configured.");
       return;
     }
@@ -165,6 +195,11 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
         }
       });
 
+      capture("registration_form_submit_attempt", {
+        variant: "v1",
+        has_phone: Boolean(phoneValidation.sanitized),
+      });
+
       const response = await fetch(requestUrl.toString(), {
         method: "POST",
         headers: {
@@ -177,7 +212,21 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
       if (!response.ok) {
         throw new Error("Webhook request failed");
       }
-    } catch {
+
+      capture("registration_form_submit_success", {
+        variant: "v1",
+        has_phone: Boolean(phoneValidation.sanitized),
+      });
+      identify(emailValidation.sanitized, {
+        name: nameValidation.sanitized,
+        email: emailValidation.sanitized,
+        registered: true,
+      });
+    } catch (error) {
+      captureException(error, {
+        context: "registration_form_submit",
+        variant: "v1",
+      });
       setError("We could not save your seat right now. Please try again.");
     } finally {
       setLoading(false);
@@ -199,7 +248,11 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <div>
-          <Button>{primary_cta}</Button>
+          <Button
+            onClick={() => capture("registration_cta_clicked", { variant: "v1" })}
+          >
+            {primary_cta}
+          </Button>
         </div>
       </DialogTrigger>
       <DialogContent>

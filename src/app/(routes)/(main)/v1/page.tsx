@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import WindowLayout from "@/components/window-layout";
+import LandingPageAnalytics from "./page-analytics";
 import LandingHeroSectionV1 from "./_sections/hero";
 import LandingProblemSectionV1 from "./_sections/problem";
 import LandingSocialProofBlockNum1SectionV1 from "./_sections/social-proof-block-num1";
@@ -18,27 +19,30 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <WindowLayout>
-      <LandingHeroSectionV1 />
+    <>
+      <LandingPageAnalytics />
+      <WindowLayout>
+        <LandingHeroSectionV1 />
 
-      <LandingSocialProofBlockNum2SectionV1 />
+        <LandingSocialProofBlockNum2SectionV1 />
 
-      <LandingProblemSectionV1 />
+        <LandingProblemSectionV1 />
 
-      <LandingSocialProofBlockNum1SectionV1 />
+        <LandingSocialProofBlockNum1SectionV1 />
 
-      <LandingThreeDreamOutcomeBlocksSectionV1 />
+        <LandingThreeDreamOutcomeBlocksSectionV1 />
 
-      <LandingSocialProofBlockNum1SectionV1 />
+        <LandingSocialProofBlockNum1SectionV1 />
 
-      <LandingWhyThisWorkshopIsDifferentSectionV1 />
+        <LandingWhyThisWorkshopIsDifferentSectionV1 />
 
-      <LandingHowItWorksSectionV1 />
+        <LandingHowItWorksSectionV1 />
 
-      <LandingFAQSectionV1 />
+        <LandingFAQSectionV1 />
 
-      <LandingFinalCTASectionV1 />
-    </WindowLayout>
+        <LandingFinalCTASectionV1 />
+      </WindowLayout>
+    </>
   );
 };
 
