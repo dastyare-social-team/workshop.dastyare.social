@@ -11,17 +11,21 @@ import {
 import SectionWrapper from "@/components/section-wrapper";
 
 const LandingSocialProofBlockNum2SectionV1 = () => {
+  const avatars = [
+    { src: "/images/elon-musk.webp", alt: "@elonmusk", fallback: "EM" },
+    { src: "/images/gary-vaynerchuk.webp", alt: "@garyvee", fallback: "GV" },
+    { src: "/images/oprah-winfrey.webp", alt: "@oprahwinfrey", fallback: "OW" },
+    { src: "/images/taylor-swift.webp", alt: "@taylorswift", fallback: "TS" },
+    { src: "/images/justin-welsh.webp", alt: "@justinwelsh", fallback: "JW" },
+  ];
   return (
     <SectionWrapper className="justify-center items-center md:pt-10 md:pb-10">
       <div className="max-w-md">
         <AvatarGroup className="justify-center mb-5">
-          {Array.from({ length: 5 }).map((_, index) => (
+          {avatars.reverse().map((a, index) => (
             <Avatar key={index} size="lg">
-              <AvatarImage
-                src="https://github.com/omidshabab.png"
-                alt="@omidshabab"
-              />
-              <AvatarFallback>OS</AvatarFallback>
+              <AvatarImage src={a.src} alt={a.alt} />
+              <AvatarFallback>{a.fallback}</AvatarFallback>
             </Avatar>
           ))}
         </AvatarGroup>
