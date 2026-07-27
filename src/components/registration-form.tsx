@@ -6,6 +6,7 @@ import { Field, FieldGroup } from "@/components/field";
 import { Input } from "@/components/input";
 import { capture, captureException, identify } from "@/lib/posthog";
 import { cn } from "@/lib/utils";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, type KeyboardEvent } from "react";
 
 const WEBHOOK_URL = process.env.NEXT_PUBLIC_REGISTRATION_WEBHOOK_URL?.trim();
@@ -95,6 +96,8 @@ const validatePhone = (
 };
 
 const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
+  const router = useRouter();
+  const pathname = usePathname();
   const [name, set_name] = useState("");
   const [email, set_email] = useState("");
   const [phone, set_phone] = useState("");
@@ -179,6 +182,8 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
     setError(null);
     setLoading(true);
 
+    const routeVariant = pathname?.includes("/v2") ? "v2" : "v1";
+
     try {
       const payload = {
         name: nameValidation.sanitized,
@@ -186,6 +191,7 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
         last_name: nameValidation.last_name,
         email: emailValidation.sanitized,
         phone: phoneValidation.sanitized,
+        source: "workshop",
       };
 
       const requestUrl = new URL(WEBHOOK_URL);
@@ -196,7 +202,7 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
       });
 
       capture("registration_form_submit_attempt", {
-        variant: "v1",
+        variant: routeVariant,
         has_phone: Boolean(phoneValidation.sanitized),
       });
 
@@ -214,7 +220,7 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
       }
 
       capture("registration_form_submit_success", {
-        variant: "v1",
+        variant: routeVariant,
         has_phone: Boolean(phoneValidation.sanitized),
       });
       identify(emailValidation.sanitized, {
@@ -222,10 +228,12 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
         email: emailValidation.sanitized,
         registered: true,
       });
+
+      router.push(`/confirmation/${routeVariant}`);
     } catch (error) {
       captureException(error, {
         context: "registration_form_submit",
-        variant: "v1",
+        variant: routeVariant,
       });
       setError("We could not save your seat right now. Please try again.");
     } finally {
@@ -249,7 +257,9 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
       <DialogTrigger asChild>
         <div>
           <Button
-            onClick={() => capture("registration_cta_clicked", { variant: "v1" })}
+            onClick={() =>
+              capture("registration_cta_clicked", { variant: "v1" })
+            }
           >
             {primary_cta}
           </Button>
