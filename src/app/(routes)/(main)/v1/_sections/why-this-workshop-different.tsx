@@ -1,4 +1,3 @@
-import { Button } from "@/components/button";
 import SectionWrapper from "@/components/section-wrapper";
 import {
   Table,

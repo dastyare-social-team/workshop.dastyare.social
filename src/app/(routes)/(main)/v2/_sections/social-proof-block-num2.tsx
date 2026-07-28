@@ -8,7 +8,7 @@ import {
 } from "@/components/avatar";
 import SectionWrapper from "@/components/section-wrapper";
 
-const LandingSocialProofBlockNum2SectionV1 = () => {
+const LandingSocialProofBlockNum2SectionV2 = () => {
   const avatars = [
     { src: "/images/elon-musk.webp", alt: "@elonmusk", fallback: "EM" },
     { src: "/images/gary-vaynerchuk.webp", alt: "@garyvee", fallback: "GV" },
@@ -41,4 +41,4 @@ const LandingSocialProofBlockNum2SectionV1 = () => {
   );
 };
 
-export default LandingSocialProofBlockNum2SectionV1;
+export default LandingSocialProofBlockNum2SectionV2;

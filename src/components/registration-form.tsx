@@ -286,7 +286,7 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
             )}
           >
             <Field className="flex flex-col gap-y-0.5">
-              <div className="pl-5 text-sm tracking-[-0.8px] text-secondary/60">
+              <div className="select-none pl-5 text-sm tracking-[-0.8px] text-secondary/60">
                 name —
               </div>
               <Input
@@ -304,7 +304,7 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
             </Field>
 
             <Field className="flex flex-col gap-y-0.5">
-              <div className="pl-5 text-sm tracking-[-0.8px] text-secondary/60">
+              <div className="select-none pl-5 text-sm tracking-[-0.8px] text-secondary/60">
                 email address —
               </div>
               <Input
@@ -329,7 +329,7 @@ const RegistrationForm = ({ primary_cta }: { primary_cta: string }) => {
               `}
             >
               <Field className="flex flex-col gap-y-0.5">
-                <div className="pl-5 text-sm tracking-[-0.8px] text-secondary/60">
+                <div className="select-none pl-5 text-sm tracking-[-0.8px] text-secondary/60">
                   phone (optional) —
                 </div>
                 <Input

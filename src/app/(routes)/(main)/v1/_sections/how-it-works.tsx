@@ -1,18 +1,8 @@
 "use client";
 
-import { Button } from "@/components/button";
 import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 import { FootprintsIcon } from "lucide-react";
-
-const items = [
-  {
-    id: "3",
-    title: "",
-    description:
-      "You'll walk out with a content and campaign framework you can start running that same week",
-  },
-];
 
 const LandingHowItWorksSectionV1 = () => {
   return (
