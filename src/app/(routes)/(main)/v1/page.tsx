@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import WindowLayout from "@/components/window-layout";
 import LandingPageAnalytics from "./page-analytics";
 import LandingHeroSectionV1 from "./_sections/hero";
@@ -10,12 +9,6 @@ import LandingWhyThisWorkshopIsDifferentSectionV1 from "./_sections/why-this-wor
 import LandingHowItWorksSectionV1 from "./_sections/how-it-works";
 import LandingFAQSectionV1 from "./_sections/faq";
 import LandingFinalCTASectionV1 from "./_sections/final-cta";
-
-export const metadata: Metadata = {
-  title: "Personal Brand Workshop — Build a Brand That Actually Sells",
-  description:
-    "A hands-on workshop for founders who can build the product but can't get anyone to notice it. Leave with a working content and campaign system you can run yourself. Limited seats.",
-};
 
 const Page = () => {
   return (

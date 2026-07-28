@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/button";
 import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 

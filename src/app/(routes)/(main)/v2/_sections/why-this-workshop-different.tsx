@@ -9,8 +9,8 @@ const LandingWhyThisWorkshopIsDifferentSectionV2 = async () => {
   return (
     <SectionWrapper className="flex flex-1 justify-center items-center">
       <div className="flex flex-col gap-y-8 items-center">
-        <div className="flex flex-col max-w-xl gap-y-2.5 items-center">
-          <h2 className="text-center">
+        <div className="flex flex-col text-center max-w-xl gap-y-2.5 items-center">
+          <h2>
             Why This Workshop{" "}
             <span className="text-primary bg-primary/5">is different</span>
           </h2>

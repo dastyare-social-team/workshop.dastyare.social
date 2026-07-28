@@ -7,7 +7,7 @@ import { PostHogProvider } from "@/components/posthog-provider";
 export const metadata: Metadata = {
   title: {
     default: "Workshop — Dastyare Social",
-    template: "%s — Workshop — Dastyare Social",
+    template: "%s — Dastyare Social",
   },
   description: "workshop.dastyare.social",
 };
