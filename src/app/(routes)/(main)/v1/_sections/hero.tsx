@@ -11,7 +11,7 @@ const value_props = [
 
 const LandingHeroSectionV1 = () => {
   return (
-    <SectionWrapper className="pt-0 border-0">
+    <SectionWrapper className="md:pt-0 border-0">
       <div className="flex flex-col flex-1 gap-y-8">
         <div className="flex flex-col gap-y-1.5">
           <p className="text-[20px]">
