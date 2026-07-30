@@ -18,13 +18,15 @@ const LandingHeroSectionV1 = () => {
             Build a Personal Brand that Actually Sells Your Products
           </p>
           <h2>
-            A hands-on&nbsp;
-            <span className="text-primary">Workshop for Founders</span> who can
-            build Products but can't get Anyone to notice it. You'll leave with
-            a working{" "}
-            <span className="text-primary">Personal Brand and a Campaign</span>{" "}
-            structure you can run the same week — Limited Seats
+            Stop Posting and Hoping{" "}
+            <span className="text-primary">— No More Content with No Plan</span>{" "}
+            behind it
           </h2>
+          <div className="flex flex-col gap-y-1">
+            A hands-on workshop for founders who can build products but can't
+            get anyone to notice it. You'll leave with a working personal brand
+            and a campaign structure you can run the same week — Limited seats
+          </div>
           <div className="flex flex-col gap-y-1">
             {value_props.map((value, index) => (
               <p key={index}>— {value}</p>
