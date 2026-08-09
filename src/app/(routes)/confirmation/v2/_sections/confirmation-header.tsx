@@ -1,12 +1,18 @@
 "use client";
 
+import SectionWrapper from "@/components/section-wrapper";
+
 const ConfirmationHeaderSectionV2 = () => {
   return (
-    <>
-      <p className="w-full text-center border-primary/5 py-2.5">
-        Confirmation — Header Section V2
-      </p>
-    </>
+    <SectionWrapper className="pt-0 border-0">
+      <div className="flex flex-col gap-y-2.5">
+        <h2>You're registered</h2>
+        <p>
+          Check your email for the link and calendar invite — we'll also send a
+          reminder before it starts
+        </p>
+      </div>
+    </SectionWrapper>
   );
 };
 

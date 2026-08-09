@@ -4,27 +4,24 @@ import { Button } from "@/components/button";
 import SectionWrapper from "@/components/section-wrapper";
 import Link from "next/link";
 
-const ConfirmationCrossPromoteNum2SectionV1 = ({
-  headline,
-  body,
-  primary_cta,
-  primary_cta_url,
-}: {
-  headline: string;
-  body: string;
-  primary_cta: string;
-  primary_cta_url: string;
-}) => {
+const ConfirmationCrossPromoteNum2SectionV1 = () => {
   return (
     <SectionWrapper>
       <div className="flex flex-col flex-1 gap-y-8">
         <div className="flex flex-col gap-y-1.5">
-          <h2>{headline}</h2>
-          <p>{body}</p>
+          <h2>Want something to read before the workshop?</h2>
+          <p>
+            Grab the founder's guide to personal branding — positioning, content
+            structure, and how to turn attention into demand
+          </p>
         </div>
 
-        <Link href={primary_cta_url} target="_blank" rel="noopener noreferrer">
-          <Button>{primary_cta}</Button>
+        <Link
+          href="https://magnet.dastyare.social"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button>Get My Guide — Now</Button>
         </Link>
       </div>
 
