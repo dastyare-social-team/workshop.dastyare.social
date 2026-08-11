@@ -25,12 +25,15 @@ const LandingMeetTheHostSectionV2 = () => {
         </div>
       </div>
 
-      <div className="aspect-3/4 flex-1 bg-primary/[1%] border-2 border-primary/5">
+      <div
+        onContextMenu={(e) => e.preventDefault()}
+        className="aspect-3/4 flex-1 bg-primary/[1%] border-2 border-primary/5"
+      >
         <Image
           width={588}
           height={588}
-          src="https://ik.imagekit.io/gvdnra9mv/meet-the-host-image.png"
-          alt="meet the host"
+          src="/images/sections/meet-the-host.webp"
+          alt=""
           className="px-1 py-1 aspect-3/4 object-cover"
         />
       </div>

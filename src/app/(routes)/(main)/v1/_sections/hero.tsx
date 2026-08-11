@@ -54,8 +54,9 @@ const LandingHeroSectionV1 = () => {
         <Image
           width={588}
           height={588}
-          src="/images/sections/hero.png"
-          alt="guide"
+          src="/images/sections/hero.webp"
+          loading="eager"
+          alt=""
           className="px-1 py-1 aspect-3/4 object-cover"
         />
       </div>
