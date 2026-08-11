@@ -24,7 +24,10 @@ const LandingHeroSectionV2 = () => {
         </div>
 
         <div className="flex flex-col gap-y-2.5">
-          <RegistrationForm primary_cta="Save My Seat — Now" />
+          <RegistrationForm
+            primary_cta="Save My Seat — Now"
+            cta_location="hero"
+          />
 
           <div className="text-[18px] opacity-80 leading-6.5">
             no credit card required, seats limited, live Q&A included

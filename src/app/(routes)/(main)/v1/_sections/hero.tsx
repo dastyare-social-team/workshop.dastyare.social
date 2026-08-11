@@ -2,6 +2,7 @@
 
 import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
+import Image from "next/image";
 
 const value_props = [
   "what to actually post, so strangers become an audience",
@@ -35,7 +36,10 @@ const LandingHeroSectionV1 = () => {
         </div>
 
         <div className="flex flex-col gap-y-2.5">
-          <RegistrationForm primary_cta="Save My Seat — Now" />
+          <RegistrationForm
+            primary_cta="Save My Seat — Now"
+            cta_location="hero"
+          />
 
           <div className="text-[18px] opacity-80 leading-6.5">
             no credit card required, seats limited, live Q&A included
@@ -43,7 +47,18 @@ const LandingHeroSectionV1 = () => {
         </div>
       </div>
 
-      <div className="aspect-square flex-1 bg-primary/[1%] border-2 border-primary/5"></div>
+      <div
+        onContextMenu={(e) => e.preventDefault()}
+        className="aspect-3/4 flex-1 bg-primary/[1%] border-2 border-primary/5"
+      >
+        <Image
+          width={588}
+          height={588}
+          src="/images/sections/hero.png"
+          alt="guide"
+          className="px-1 py-1 aspect-3/4 object-cover"
+        />
+      </div>
     </SectionWrapper>
   );
 };

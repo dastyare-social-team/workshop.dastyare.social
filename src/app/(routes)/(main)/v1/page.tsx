@@ -1,5 +1,4 @@
 import WindowLayout from "@/components/window-layout";
-import LandingPageAnalytics from "./page-analytics";
 import LandingHeroSectionV1 from "./_sections/hero";
 import LandingProblemSectionV1 from "./_sections/problem";
 import LandingSocialProofBlockNum1SectionV1 from "./_sections/social-proof-block-num1";
@@ -12,30 +11,27 @@ import LandingFinalCTASectionV1 from "./_sections/final-cta";
 
 const Page = () => {
   return (
-    <>
-      <LandingPageAnalytics />
-      <WindowLayout>
-        <LandingHeroSectionV1 />
+    <WindowLayout>
+      <LandingHeroSectionV1 />
 
-        <LandingSocialProofBlockNum2SectionV1 />
+      <LandingSocialProofBlockNum2SectionV1 />
 
-        <LandingProblemSectionV1 />
+      <LandingProblemSectionV1 />
 
-        <LandingSocialProofBlockNum1SectionV1 />
+      <LandingSocialProofBlockNum1SectionV1 />
 
-        <LandingThreeDreamOutcomeBlocksSectionV1 />
+      <LandingThreeDreamOutcomeBlocksSectionV1 />
 
-        <LandingSocialProofBlockNum1SectionV1 />
+      <LandingSocialProofBlockNum1SectionV1 />
 
-        <LandingWhyThisWorkshopIsDifferentSectionV1 />
+      <LandingWhyThisWorkshopIsDifferentSectionV1 />
 
-        <LandingHowItWorksSectionV1 />
+      <LandingHowItWorksSectionV1 />
 
-        <LandingFAQSectionV1 />
+      <LandingFAQSectionV1 />
 
-        <LandingFinalCTASectionV1 />
-      </WindowLayout>
-    </>
+      <LandingFinalCTASectionV1 />
+    </WindowLayout>
   );
 };
 

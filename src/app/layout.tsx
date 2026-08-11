@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { pally } from "@/lib/fonts";
 import { PostHogProvider } from "@/components/posthog-provider";
+import { PageAnalytics } from "@/components/page-analytics";
+import { ConsentBanner } from "@/components/consent-banner";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(pally.className, "antialiased tracking-tighter")}>
-        <PostHogProvider>{children}</PostHogProvider>
+        <PostHogProvider>
+          {children}
+          <PageAnalytics />
+          <ConsentBanner />
+        </PostHogProvider>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import SectionWrapper from "@/components/section-wrapper";
 
 const ConfirmationHeaderSectionV1 = () => {
   return (
-    <SectionWrapper className="pt-0 border-0">
+    <SectionWrapper className="md:pt-0 border-0">
       <div className="flex flex-col gap-y-2.5">
         <h2>You're registered</h2>
         <p>

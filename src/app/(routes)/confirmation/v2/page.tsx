@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import WindowLayout from "@/components/window-layout";
 import ConfirmationHeaderSectionV2 from "../v2/_sections/confirmation-header";
 import ConfirmationFeaturedOfferSectionV2 from "../v2/_sections/featured-offer";

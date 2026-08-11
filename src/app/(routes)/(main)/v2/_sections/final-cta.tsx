@@ -32,7 +32,10 @@ const LandingFinalCTASectionV2 = () => {
         </div>
 
         <div className="pt-5">
-          <RegistrationForm primary_cta="Save My Seat — Now" />
+          <RegistrationForm
+            primary_cta="Save My Seat — Now"
+            cta_location="final-cta"
+          />
         </div>
       </div>
 
