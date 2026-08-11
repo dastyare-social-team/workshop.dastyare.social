@@ -6,15 +6,10 @@
     "dev": "next dev -p 5793",
     "build": "next build",
     "start": "next start -p 5793",
-    "lint": "eslint",
-    "email:dev": "email dev --dir emails",
-    "email:build": "email build --dir emails"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.0",
-    "@react-email/components": "^0.5.1",
-    "@react-email/render": "^1.0.0",
-    "@react-email/tailwind": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.25.0",
@@ -24,13 +19,10 @@
     "radix-ui": "^1.6.5",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "react-email": "^4.0.0",
     "remark-gfm": "^4.0.1",
-    "resend": "^4.0.0",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@react-email/preview-server": "4.3.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
