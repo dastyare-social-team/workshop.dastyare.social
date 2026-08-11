@@ -1,46 +1,53 @@
 "use client";
 
 import { useState } from "react";
-import { getPostHogConsent, setPostHogConsent } from "@/lib/posthog";
+import { setPostHogConsent } from "@/lib/posthog";
+import type { PostHogConsent } from "@/lib/posthog";
+import { Button } from "./button";
 
-export function ConsentBanner() {
-  const [visible, setVisible] = useState(
-    () => typeof window !== "undefined" && getPostHogConsent() === null,
+export function ConsentBanner({
+  initialConsent,
+}: {
+  initialConsent?: "granted" | "denied";
+}) {
+  const [consent, setConsent] = useState<PostHogConsent | null>(
+    initialConsent ?? null,
   );
 
-  if (!visible) {
+  if (consent !== null) {
     return null;
   }
 
-  const choose = (consent: "granted" | "denied") => {
-    setPostHogConsent(consent);
-    setVisible(false);
+  const choose = (next: PostHogConsent) => {
+    setPostHogConsent(next);
+    setConsent(next);
   };
 
   return (
     <div
       data-ph-exclude-click
-      className="fixed bottom-4 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 flex flex-col gap-y-2.5 rounded-3xl border border-primary/10 bg-background/95 backdrop-blur-xl px-5 py-4 text-[16px] leading-6 text-secondary/90 shadow-xl"
+      className="fixed bottom-4 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 flex flex-col gap-y-2.5 rounded-3xl border border-primary/10 bg-white/50 backdrop-blur-3xl px-5 py-4 text-secondary/90"
     >
-      <p>
+      <p className="text-[20px]">
         We use analytics cookies to understand how visitors use this site and
-        improve it.
+        improve it
       </p>
-      <div className="flex gap-x-2.5 justify-end">
-        <button
+      <div className="flex gap-x-2.5 justify-end text-[16px] mt-2.5">
+        <Button
           type="button"
+          variant="secondary"
           onClick={() => choose("denied")}
-          className="cursor-pointer rounded-full border border-primary/10 px-4 py-1 hover:opacity-60"
+          className="text-[18px] border px-5"
         >
           Decline
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           onClick={() => choose("granted")}
-          className="cursor-pointer rounded-full bg-button-background text-button-foreground border border-button-border px-4 py-1 hover:opacity-60"
+          className="text-[18px] px-5"
         >
           Accept
-        </button>
+        </Button>
       </div>
     </div>
   );

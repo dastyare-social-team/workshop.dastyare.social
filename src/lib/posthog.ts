@@ -1,4 +1,5 @@
 import posthog from "posthog-js";
+import { CONSENT_COOKIE_NAME, VISITOR_ID_COOKIE_NAME } from "@/lib/consent";
 
 type PostHogEventProperties = Record<string, unknown>;
 
@@ -8,9 +9,6 @@ const posthogKey =
 const posthogHost =
   process.env.NEXT_PUBLIC_POSTHOG_HOST?.trim() || "https://us.i.posthog.com";
 const isPostHogEnabled = Boolean(posthogKey);
-
-const CONSENT_COOKIE_NAME = "posthog_consent";
-const VISITOR_ID_COOKIE_NAME = "visitor_id";
 
 export type PostHogConsent = "granted" | "denied";
 
