@@ -7,7 +7,6 @@ A landing page for the Personal Brand Workshop course, built as an A/B-tested fu
 Everything that has been set up / done on this project so far:
 
 - **Pages** — A/B landing (`/v1`, `/v2`), confirmation (`/confirmation/v1`, `/confirmation/v2`). A server-side `/` redirect picks a variant based on the PostHog flag `home-page-variant` (cookie `home_ab_variant`, fallback `/v1`).
-- **Full-page screenshots** — captured for every page/variant, compressed to WebP q80, and committed under `screenshots/` (see tables below).
 - **PostHog analytics** — consent-gated (`posthog_consent` cookie), session replay with full text/attribute masking, scroll depth, button/link/outbound-click tracking, plus the registration funnel events. The full setup guide and event list live in [`POSTHOG.md`](POSTHOG.md).
 - **PostHog dashboard** — a project dashboard (see below) hosting the three funnel insights plus a weekly email subscription.
 - **Shared A/B experiment** — `Home page A/B test` (PostHog experiment, flag `home-page-variant`, variants `v1`/`v2`, 50/50, 100% rollout), shared with the magnet and score-card sites.
