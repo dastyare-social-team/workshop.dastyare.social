@@ -9,7 +9,11 @@ const value_props = [
   "Live Q&A on your actual brand",
 ];
 
-const LandingFinalCTASectionV1 = () => {
+const LandingFinalCTASectionV1 = ({
+  webhookUrl,
+}: {
+  webhookUrl?: string;
+}) => {
   return (
     <SectionWrapper className="justify-center items-center">
       <div className="max-w-xl text-center pt-5 flex flex-col gap-y-2.5 items-center">
@@ -35,6 +39,7 @@ const LandingFinalCTASectionV1 = () => {
           <RegistrationForm
             primary_cta="Save My Seat — Now"
             cta_location="final-cta"
+            webhookUrl={webhookUrl}
           />
         </div>
       </div>

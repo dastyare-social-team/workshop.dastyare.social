@@ -3,7 +3,11 @@
 import RegistrationForm from "@/components/registration-form";
 import SectionWrapper from "@/components/section-wrapper";
 
-const LandingProblemSectionV2 = () => {
+const LandingProblemSectionV2 = ({
+  webhookUrl,
+}: {
+  webhookUrl?: string;
+}) => {
   return (
     <SectionWrapper className="justify-center">
       <div className="flex flex-col flex-1 items-center gap-y-8">
@@ -29,7 +33,7 @@ const LandingProblemSectionV2 = () => {
           </p>
         </div>
 
-        <RegistrationForm primary_cta="Save My Seat — Now" />
+        <RegistrationForm primary_cta="Save My Seat — Now" webhookUrl={webhookUrl} />
       </div>
     </SectionWrapper>
   );

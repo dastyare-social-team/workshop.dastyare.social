@@ -10,7 +10,7 @@ const value_props = [
   "how to run it without a marketing team or a media budget",
 ];
 
-const LandingHeroSectionV1 = () => {
+const LandingHeroSectionV1 = ({ webhookUrl }: { webhookUrl?: string }) => {
   return (
     <SectionWrapper className="md:pt-0 border-0">
       <div className="flex flex-col flex-1 gap-y-8">
@@ -39,6 +39,7 @@ const LandingHeroSectionV1 = () => {
           <RegistrationForm
             primary_cta="Save My Seat — Now"
             cta_location="hero"
+            webhookUrl={webhookUrl}
           />
 
           <div className="text-[18px] opacity-80 leading-6.5">

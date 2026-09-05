@@ -3,7 +3,11 @@ import { getTranslations } from "next-intl/server";
 import { CrownIcon } from "lucide-react";
 import RegistrationForm from "@/components/registration-form";
 
-const LandingWhyThisWorkshopIsDifferentSectionV2 = async () => {
+const LandingWhyThisWorkshopIsDifferentSectionV2 = async ({
+  webhookUrl,
+}: {
+  webhookUrl?: string;
+}) => {
   const t = await getTranslations("why_this_workshop_different");
 
   return (
@@ -93,7 +97,7 @@ const LandingWhyThisWorkshopIsDifferentSectionV2 = async () => {
           </div>
         </div>
 
-        <RegistrationForm primary_cta="Save My Seat — Now" />
+        <RegistrationForm primary_cta="Save My Seat — Now" webhookUrl={webhookUrl} />
       </div>
     </SectionWrapper>
   );

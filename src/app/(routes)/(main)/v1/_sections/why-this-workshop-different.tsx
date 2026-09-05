@@ -99,7 +99,11 @@ const tableData = [
   },
 ];
 
-const LandingWhyThisWorkshopIsDifferentSectionV1 = async () => {
+const LandingWhyThisWorkshopIsDifferentSectionV1 = async ({
+  webhookUrl,
+}: {
+  webhookUrl?: string;
+}) => {
   const t = await getTranslations("why_this_workshop_different");
 
   return (
@@ -113,7 +117,10 @@ const LandingWhyThisWorkshopIsDifferentSectionV1 = async () => {
           <p>Not Another "Personal Branding" Webinar</p>
         </div>
 
-        <RegistrationForm primary_cta="Save My Seat — Now" />
+        <RegistrationForm
+          primary_cta="Save My Seat — Now"
+          webhookUrl={webhookUrl}
+        />
 
         {/* —— Comparison Table —— */}
         <Table className="w-full max-w-5xl overflow-x-scroll select-none">
