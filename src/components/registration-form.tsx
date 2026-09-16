@@ -28,17 +28,17 @@ const validateName = (
   const sanitized = sanitizeText(value);
 
   if (!sanitized) {
-    return { ok: false, message: "Please enter your name." };
+    return { ok: false, message: "Please Enter Your Name" };
   }
 
   if (containsSuspiciousContent(sanitized)) {
-    return { ok: false, message: "Please use plain text in your name." };
+    return { ok: false, message: "Please Use Plain Text in Your Name" };
   }
 
   const parts = sanitized.split(/\s+/).filter(Boolean);
 
   if (parts.length < 2) {
-    return { ok: false, message: "Please enter your first and last name." };
+    return { ok: false, message: "Please Enter Your First and Last Name" };
   }
 
   return {
